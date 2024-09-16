@@ -3,6 +3,7 @@ import Item from "./Item";
 import { ITarefa } from "../../types/tarefa";
 
 function Lista({ tarefas }: { tarefas: ITarefa[]}) {
+    console.log(tarefas)
     return (
         <aside className={style.listaTarefas}>
             <h2>Estudos do dia</h2>
@@ -10,8 +11,7 @@ function Lista({ tarefas }: { tarefas: ITarefa[]}) {
                 {tarefas.map((item, index) => (
                     <Item 
                         key={index}
-                        tarefa={item.tarefa}
-                        tempo={item.tempo}
+                        {...item}
                     />
                 ))}
             </ul>
